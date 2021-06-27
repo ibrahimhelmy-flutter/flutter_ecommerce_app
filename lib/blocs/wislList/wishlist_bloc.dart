@@ -34,7 +34,7 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
     if (state is WishlistLoaded) {
       try {
         yield WishlistLoaded(
-            wishList: WishList(
+            wishList: WishListModel(
                 products: List.from(state.wishList.products)
                   ..add(event.product)));
       } catch (e) {}
@@ -46,7 +46,7 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
     if (state is WishlistLoaded) {
       try {
         yield WishlistLoaded(
-            wishList: WishList(
+            wishList: WishListModel(
                 products: List.from(state.wishList.products)
                   ..remove(event.product)));
       } catch (e) {}

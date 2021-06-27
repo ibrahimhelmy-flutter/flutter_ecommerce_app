@@ -11,7 +11,6 @@ class StartWishListEvent extends WishlistEvent {}
 
 class AddWishListEvent extends WishlistEvent {
   final Product product;
-
   AddWishListEvent(this.product);
   @override
   List<Object> get props => [product];
