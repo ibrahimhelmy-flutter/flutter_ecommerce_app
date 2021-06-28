@@ -1,0 +1,21 @@
+{
+    "counter_message":"you Click Message",
+    "lang":"English lang",
+    "title":"Home Page",
+    "home_title":"Shooping app",
+    "cart_title":"Cart Screen",
+    "catalog_title":"Catalog_Screen",
+    "product_title":"product Screen",
+    "WishList_title":"WishList Screen",
+
+    "recommended":"Recommended",
+    "most_populer":"Most Popular",
+    
+    "Product_information":"Product Information",
+    "delevery_information":"Delevery Information",
+    "Add_to_Card":"ADD To Card"
+
+    
+
+
+}

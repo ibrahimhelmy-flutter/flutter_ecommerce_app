@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ecommerce_app/blocs/cart/cart_bloc.dart';
 
 import 'package:flutter_ecommerce_app/blocs/wislList/wishlist_bloc.dart';
+import 'package:flutter_ecommerce_app/config/lang/applocal.dart';
 import 'package:flutter_ecommerce_app/models/models.dart';
 import 'package:flutter_ecommerce_app/widgets/widgets.dart';
 
@@ -44,7 +45,7 @@ class ProductScreen extends StatelessWidget {
                               .read<WishlistBloc>()
                               .add(AddWishListEvent(product));
                           ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("ADD To WISHLiST")));
+                              SnackBar(content: Text(trans(context, "Add_to_Card"))));
                         },
                         icon: Icon(
                           Icons.favorite,
@@ -60,7 +61,7 @@ class ProductScreen extends StatelessWidget {
                         context.read<CartBloc>().add(CartProductAdded(product));
                       },
                       child: Text(
-                        "Add To Cart",
+                        trans(context, "Add_to_Card"),
                         style: Theme.of(context).textTheme.headline2,
                       ),
                     );
@@ -125,7 +126,7 @@ class ProductScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ExpansionTile(
                 initiallyExpanded: true,
-                title: Text("Product Information"),
+                title: Text(trans(context, "Product_information")),
                 children: [
                   ListTile(
                     title: Text(
@@ -140,7 +141,7 @@ class ProductScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ExpansionTile(
                 initiallyExpanded: true,
-                title: Text("Delivery  Information"),
+                title: Text(trans(context, "delevery_information")),
                 children: [
                   ListTile(
                     title: Text(

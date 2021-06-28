@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ecommerce_app/blocs/langBloc/lang_bloc.dart';
 import 'package:flutter_ecommerce_app/screens/screens.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -32,12 +34,29 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             icon: Icon(
               Icons.favorite,
               color: Colors.black,
-            ))
+            )),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: DropdownButton(
+            underline: SizedBox(),
+           
+            icon: Icon(
+              Icons.language,
+              color: Colors.black,
+            ),
+            items: [
+              DropdownMenuItem(child: Text("العربية"), value: "ar"),
+              DropdownMenuItem(child: Text("ُEnglish"), value: "en"),
+            ],
+            onChanged: (lan) {
+              context.read<LangBloc>().add(LangChange(lan.toString()));
+            },
+          ),
+        )
       ],
     );
   }
 
   @override
-  
   Size get preferredSize => Size.fromHeight(50);
 }

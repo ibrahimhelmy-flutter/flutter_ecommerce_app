@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ecommerce_app/blocs/langBloc/lang_bloc.dart';
+import 'package:flutter_ecommerce_app/config/lang/applocal.dart';
 import 'package:flutter_ecommerce_app/models/category_model.dart';
 import 'package:flutter_ecommerce_app/models/models.dart';
 import 'package:flutter_ecommerce_app/widgets/product_carsoule_list.dart';
@@ -18,7 +21,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Shooping App"),
+      appBar: CustomAppBar(title: trans(context, "home_title"),),
       bottomNavigationBar: CustomNavBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -36,12 +39,12 @@ class HomeScreen extends StatelessWidget {
                 }).toList(),
               ),
             ),
-            CustomSectionTitle(title: "Recommended"),
+            CustomSectionTitle(title: trans(context, "recommended")),
             ProductCarsouleList(
                 products: Product.products
                     .where((element) => element.isRecommended)
                     .toList()),
-            CustomSectionTitle(title: "Most Popular"),
+            CustomSectionTitle(title: trans(context, "most_populer")),
             ProductCarsouleList(
                 products: Product.products
                     .where((element) => element.isPopular)

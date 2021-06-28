@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app/config/lang/applocal.dart';
 import 'package:flutter_ecommerce_app/models/category_model.dart';
 import 'package:flutter_ecommerce_app/models/models.dart';
 import 'package:flutter_ecommerce_app/widgets/widgets.dart';
@@ -25,7 +26,7 @@ class CatalogScreen extends StatelessWidget {
     print(allProductoFCat);
 
     return Scaffold(
-      appBar: CustomAppBar(title: "Catalog Screen"),
+      appBar: CustomAppBar(title: trans(context,"catalog_title")),
       bottomNavigationBar: CustomNavBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

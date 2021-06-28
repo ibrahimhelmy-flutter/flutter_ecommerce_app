@@ -51,7 +51,8 @@ class CartScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              CartModel().freeDeleverymessage,
+                              state.cartModel.freeDeleverymessage
+                    ,
                               style: Theme.of(context).textTheme.headline5,
                             ),
                             ElevatedButton(
